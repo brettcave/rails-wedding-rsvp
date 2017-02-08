@@ -3,8 +3,8 @@
 <!--[if gt IE 8]><!-->     <html class="<%= controller_name %> <%= action_name %>"> <!--<![endif]-->
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= content_for?(:title) ? yield(:title) : "<%= ENV['COUPLE_NAME'] %>: <%= ENV['WEDDING_DATE'] %>" %></title>
-    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "<%= ENV['COUPLE_NAME'] %> are getting married!" %>">
+    <title><%= content_for?(:title) ? yield(:title) : "#{ENV['COUPLE_NAME']}: #{ENV['WEDDING_DATE']}" %></title>
+    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "#{ENV['COUPLE_NAME']} are getting married!" %>">
     <%= stylesheet_link_tag "application-all", :media => "all" %>
     <!--[if lte IE 8]>
         <%= stylesheet_link_tag "application-ie", :media => "all" %>

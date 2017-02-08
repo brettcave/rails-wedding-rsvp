@@ -5,8 +5,10 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.1'
   gem 'uglifier', '>= 1.0.3'
 end
+gem "json", "~> 1.8.3"
 gem 'jquery-rails'
 gem "mysql2", ">= 0.3.11"
+gem "sqlite3"
 gem "foreigner", ">= 1.3.0"
 gem "rspec-rails", ">= 2.12.2", :group => [:development, :test]
 gem "database_cleaner", ">= 0.9.1", :group => :test
@@ -23,7 +25,7 @@ gem 'cocoon'
 gem "quiet_assets", ">= 1.0.1", :group => :development
 gem "figaro", ">= 0.5.3"
 gem "better_errors", ">= 0.3.2", :group => :development
-gem "binding_of_caller", ">= 0.6.8", :group => :development
+# gem "binding_of_caller", ">= 0.6.8", :group => :development
 gem 'sendgrid'
 gem 'delayed_job_active_record', "~> 0.3.3"
 gem "daemons"

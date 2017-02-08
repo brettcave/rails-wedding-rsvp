@@ -5,7 +5,7 @@
 <% if days_to_go > 0 %>
 	<h2 style="">Only <%= days_to_go %> days to go until the wedding!</h2>
 <% elsif days_to_go == 0 %>
-	<h3 style="">Wedding day!!!</h3>
+	<h3 style="">Wedding day!</h3>
 <% else %>
 	<h3 style=""><%= ENV['COUPLE_NAME'] %> were married <%= -days_to_go %> days ago!</h3>
 <% end %>
@@ -17,7 +17,12 @@
 				<b><%= @error_message %></b>
 			</div>
 		<% end %>
-		<%= f.input_field :first_name, :placeholder => "First name" %><%= f.input_field :last_name, :placeholder => "Last name" %><%= f.button :submit, "Find my invitation", :class => "btn btn-success btn-large" %>
+		<br /><br />
+		<div class="row"><div class="col-md-12">
+		<%= f.input_field :first_name, :placeholder => "First name" %>
+		<%= f.input_field :last_name, :placeholder => "Last name" %>
+		<%= f.button :submit, "Find my invitation", :class => "btn btn-success btn-small" %>
+		</div></div>
 	<% end %>
 </div>
 

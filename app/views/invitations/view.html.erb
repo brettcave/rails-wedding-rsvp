@@ -12,7 +12,7 @@
 	</div>-->
 
 	<div class="section spacer">
-		<% days_to_go = (DateTime.parse(ENV['WEDDING_DATE']_DB) - DateTime.now).to_i %>
+		<% days_to_go = (DateTime.parse(ENV['WEDDING_DATE']) - DateTime.now).to_i %>
 
 		<% if days_to_go > 0 %>
 			<h1 style="margin-top: 15px">Only <%= days_to_go %> days to go until the wedding!</h1>
