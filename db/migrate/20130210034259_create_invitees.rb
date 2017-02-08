@@ -2,7 +2,7 @@ class CreateInvitees < ActiveRecord::Migration
   def change
     create_table :invitees do |t|
       t.integer :invitation_id, :null => false
-      t.boolean :guest, :default => 0
+      t.boolean :guest, :default => false
       t.string :first_name
       t.string :last_name
       t.integer :attending, :limit => 1
