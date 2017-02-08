@@ -47,7 +47,7 @@ ActiveRecord::Schema.define(:version => 20130211003601) do
 
   create_table "invitees", :force => true do |t|
     t.integer  "invitation_id",                                 :null => false
-    t.boolean  "guest",                      :default => f
+    t.boolean  "guest",                      :default => FALSE
     t.string   "first_name"
     t.string   "last_name"
     t.integer  "attending",     :limit => 1
