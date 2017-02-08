@@ -8,7 +8,7 @@ end
 gem "json", "~> 1.8.3"
 gem 'jquery-rails'
 gem "mysql2", ">= 0.3.11"
-gem "sqlite3"
+gem "sqlite3", :group => :development
 gem "foreigner", ">= 1.3.0"
 gem "rspec-rails", ">= 2.12.2", :group => [:development, :test]
 gem "database_cleaner", ">= 0.9.1", :group => :test
