@@ -7,8 +7,7 @@ group :assets do
 end
 gem "json", "~> 1.8.3"
 gem 'jquery-rails'
-gem "mysql2", ">= 0.3.11"
-gem "activerecord-mysql2-adapter"
+gem "pg"
 gem "sqlite3", :group => :development
 gem "foreigner", ">= 1.3.0"
 gem "rspec-rails", ">= 2.12.2", :group => [:development, :test]
