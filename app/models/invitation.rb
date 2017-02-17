@@ -1,5 +1,5 @@
 class Invitation < ActiveRecord::Base
-  attr_accessible :name, :email, :requests, :address, :notes, :timestamps, :invitees_attributes
+  # attr_accessible :name, :email, :requests, :address, :notes, :timestamps, :invitees_attributes
   attr_accessor :rsvp_validation
   has_many :invitees
   accepts_nested_attributes_for :invitees, :allow_destroy => true

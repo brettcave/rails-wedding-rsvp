@@ -70,10 +70,15 @@ class InvitationsController < ApplicationController
     end
   end
 
+  def invite_params
+    params.require(:invitation)
+  end
+
   def update
+    params.permit!
     @invitation = Invitation.find(params[:id])
 
-    @invitation.assign_attributes(params[:invitation])
+    @invitation.assign_attributes(invite_params)
     reset_guest_names
 
     respond_to do |format|

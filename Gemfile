@@ -1,9 +1,10 @@
 source 'https://rubygems.org'
-gem 'rails', '3.2.11'
+gem 'rails', '>= 4.2.7'
 group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
+  gem 'sass-rails',   '>= 3.2.3'
+  gem 'coffee-rails', '>= 3.2.1'
   gem 'uglifier', '>= 1.0.3'
+  gem 'sprockets-rails', '~> 2.3.3'
 end
 gem "json", "~> 1.8.3"
 gem 'jquery-rails'
@@ -27,7 +28,7 @@ gem "figaro", ">= 0.5.3"
 gem "better_errors", ">= 0.3.2", :group => :development
 # gem "binding_of_caller", ">= 0.6.8", :group => :development
 gem 'sendgrid'
-gem 'delayed_job_active_record', "~> 0.3.3"
+gem 'delayed_job_active_record' #, "~> 0.3.3"
 gem "daemons"
 gem "twilio-ruby"
 gem "capistrano", :group => :development
