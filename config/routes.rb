@@ -1,10 +1,9 @@
 RailsWeddingRsvp::Application.routes.draw do
-  # authenticated :user do
-  #   root :to => 'invitations#index'
-  # end
+  authenticated :user do
+    root :to => 'invitations#index'
+  end
 
 devise_for :users, :skip => [:sessions, :registrations]
-
 as :user do
 	get 'login' => 'devise/sessions#new', :as => :new_user_session
 	post 'login' => 'devise/sessions#create', :as => :user_session
@@ -26,9 +25,8 @@ put 'email_multiple' => 'invitations#email_multiple', :as => :email_multiple_inv
 get 'invitations/:id/remind' => 'invitations#remind', :as => :remind_invitation
 match 'lookup' => 'invitations#lookup', :as => :lookup_invitation, :via => [:get, :post]
 get 'i/:code' => 'invitations#view', :as => :view_invitation
-#get 'rsvp/:code' => 'invitations#rsvp', :as => :rsvp
-#put 'rsvp/:code' => 'invitations#rsvp', :as => :rsvp
-match 'rsvp/:code' => 'invitations#rsvp', :as => :rsvp, :via => [:get,:put]
+get 'rsvp/:code' => 'invitations#rsvp', :as => :rsvp
+put 'rsvp/:code' => 'invitations#rsvp', :as => :rsvp
 get 'thanks/:code' => 'invitations#thanks', :as => :rsvp_thanks
 get 'track/:code' => 'invitations#track', :as => :track_invitation
 get '/phone/receive' => 'twilio#receive', :as => :twilio_receive_call
