@@ -15,8 +15,8 @@ gem "foreigner", ">= 1.3.0"
 gem "rspec-rails", ">= 2.12.2", :group => [:development, :test]
 gem "database_cleaner", ">= 0.9.1", :group => :test
 gem "email_spec", ">= 1.4.0", :group => :test
-gem "less-rails", ">= 2.2.6", :group => :assets
-gem "twitter-bootstrap-rails", ">= 2.1.8", :group => :assets
+gem "less-rails", ">= 2.2.6"#, :group => :assets
+gem "twitter-bootstrap-rails", ">= 2.1.8"#, :group => :assets
 gem "libv8", ">= 3.11.8"
 gem "therubyracer", ">= 0.11.3", :group => :assets, :platform => :ruby, :require => "v8"
 gem "devise", ">= 2.2.3"
