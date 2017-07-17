@@ -22,21 +22,18 @@
 	<%= simple_form_for @invitation, :url => rsvp_path(@invitation.code), :method => :put do |f| %>
 
 		<div class="spacer">
-			<h5>Please select an attendance option<% if @invitation.invitees.count > 1 %> for each guest<% end %>:</h5>
+			<h5>Please let us know if you can make it:</h5>
 			<table class="guests">
 				<%= f.simple_fields_for :invitees do |invitee_form| %>
 					<tr class="guest<%= !invitee_form.object.errors[:attending].empty? ? " error" : "" %>">
 						<!-- <td class="text-right name"> -->
 						<td class="text-left attendance">
 							<%= !invitee_form.object.guest ? invitee_form.object.first_name : "My guest" %>
-							<%= invitee_form.input_field :attending, :as => :select, :class => "rsvp_status", :collection => RSVP_ANSWERS.collect { |v,i| [v,RSVP_ANSWERS.index(v)] }, :prompt => "- please select -" %></td>
+              <%= invitee_form.input_field :attending, :as => :select, :class => "rsvp_status", :collection => RSVP_ANSWERS.collect { |v,i| [v,RSVP_ANSWERS.index(v)] }, :prompt => "- please select -" %></td>
+            </td>
 					</tr>
 				<% end %>
 			</table>
-		</div>
-
-		<div class="spacer address">
-			<%= f.input :address, :label_html => { :class => "large-text" }, :error => false, :input_html => { :class => "input-xlarge large-text", :rows => 4 }, :placeholder => "Your address here", :label => "Please provide your mailing address" %>
 		</div>
 
 		<div class="spacer">

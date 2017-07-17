@@ -7,12 +7,7 @@ To confirm, here is your response:
 <% @invitation.invitees.each do |invitee| %>
 <%= invitee.guest ? "Guest" : (invitee.first_name << " " << invitee.last_name) %> <%= !invitee.attending.nil? ? RSVP_ANSWERS[invitee.attending] : "...?" %>
 <% end %>
-<% if @invitation.address.present? %>
 
-Mailing Address
-
-<%= @invitation.address %>
-<% end %>
 <% if @invitation.requests.present? %>
 
 Special Requests

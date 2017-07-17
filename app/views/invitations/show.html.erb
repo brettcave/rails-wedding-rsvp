@@ -18,7 +18,6 @@
   <% end %>
 </ul>
 <p><span class="field-label">Special Requests:</span> <%= @invitation.requests.blank? ? "&mdash;".html_safe : @invitation.requests %></p>
-<p><span class="field-label">Address:</span> <%= @invitation.address.blank? ? "&mdash;".html_safe : @invitation.address %></p>
 <p><span class="field-label">Note:</span> <%= @invitation.notes.blank? ? "&mdash;".html_safe : @invitation.notes %></p>
 
 <div class="form-actions">
