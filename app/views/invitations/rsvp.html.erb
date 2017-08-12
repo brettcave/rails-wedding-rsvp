@@ -6,7 +6,7 @@
 <% # Uses ActiveModel::Dirty for magic _was method to get value before change
    if !@invitation.responded_at_was.nil? %>
 	<div class="alert">
-		Your RSVP has already been submitted. If you are changing your attendance, please do so before June 1, 2013
+		Your RSVP has already been submitted. If you are changing your attendance, please do so before August 31, 2017
 	</div>
 <% end %>
 
@@ -16,7 +16,7 @@
 	<p class="spacer text-center">
 		<b><%= ENV['COUPLE_NAME'] %></b><br>
 		<b><%= ENV['WEDDING_DATE'] %></b><br>
-		<b>SunWa River Lodge, Parys</b>
+		<b><%= ENV['WEDDING_LOCATION'] %> </b>
 	</p>
 
 	<%= simple_form_for @invitation, :url => rsvp_path(@invitation.code), :method => :put do |f| %>
