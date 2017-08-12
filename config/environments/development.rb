@@ -17,7 +17,7 @@ RailsWeddingRsvp::Application.configure do
   config.action_mailer.default_url_options = { :host => "#{ENV['APP_DOMAIN']}.localhost" }
 
   config.action_mailer.asset_host = "http://#{ENV['APP_DOMAIN']}.localhost"
-  config.action_mailer.delivery_method = :sendmail
+  config.action_mailer.delivery_method = :smtp
 
   # send all emails to me in dev mode - not working
   # config.action_mailer.delivery_method = :single_recipient_sendmail
@@ -30,14 +30,15 @@ RailsWeddingRsvp::Application.configure do
   # config.action_mailer.smtp_settings = {
   #   :address => "smtp.novuscom.net"
   # }
+
   config.action_mailer.smtp_settings = {
-    :user_name => ENV['SMTP_USERNAME'],
-    :password => ENV['SMTP_PASSWORD'],
-    :domain => ENV['SMTP_DOMAIN'],
-    :address => ENV['SMTP_ADDRESS'],
-    :port => 587,
-    :authentication => :plain,
-    :enable_starttls_auto => true
+      :user_name => ENV['SENDGRID_USERNAME'],
+      :password => ENV['SENDGRID_PASSWORD'],
+      :domain => ENV['APP_DOMAIN'],
+      :address => "smtp.sendgrid.net",
+      :port => 587,
+      :authentication => :plain,
+      :enable_starttls_auto => true
   }
 
   # change to true to allow email to be sent during development

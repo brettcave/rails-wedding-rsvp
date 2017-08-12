@@ -1,11 +1,8 @@
 RSVP_ANSWERS = [
-	"will be there, ready to attack the dance floor!",
-	"wouldn't miss it for the world!",
-	"will come, but only because I hear there's wine",
-	"can't make it but sends their love",
-	"declines with pleasure"
+	"Will be there",
+	"Unfortunately can't make it"
 ]
 
-RSVP_ATTENDING_VALUES = 0..2
-RSVP_NOT_ATTENDING_VALUES = 3..4
+RSVP_ATTENDING_VALUES = 0
+RSVP_NOT_ATTENDING_VALUES = 1
 RSVP_MEAN_VALUES = [2,4]

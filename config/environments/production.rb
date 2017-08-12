@@ -71,10 +71,10 @@ RailsWeddingRsvp::Application.configure do
   config.action_mailer.default :charset => "utf-8"
   config.action_mailer.asset_host = "http://#{ENV['APP_DOMAIN']}"
   config.action_mailer.smtp_settings = {
-    :user_name => ENV['SMTP_USERNAME'],
-    :password => ENV['SMTP_PASSWORD'],
-    :domain => ENV['SMTP_DOMAIN'],
-    :address => ENV['SMTP_ADDRESS'],
+    :user_name => ENV['SENDGRID_USERNAME'],
+    :password => ENV['SENDGRID_PASSWORD'],
+    :domain => ENV['APP_DOMAIN'],
+    :address => "smtp.sendgrid.net",
     :port => 587,
     :authentication => :plain,
     :enable_starttls_auto => true

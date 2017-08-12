@@ -24,11 +24,6 @@
   		<% end %>
   	</ul>
 
-    <% if @invitation.address.present? %>
-    <h4>Address</h4>
-    <p><%= @invitation.address %></p>
-    <% end %>
-
     <% if @invitation.requests.present? %>
     <h4>Special Requests</h4>
     <p><%= @invitation.requests %></p>

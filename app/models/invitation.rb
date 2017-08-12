@@ -3,7 +3,6 @@ class Invitation < ActiveRecord::Base
   attr_accessor :rsvp_validation
   has_many :invitees
   accepts_nested_attributes_for :invitees, :allow_destroy => true
-  validates_presence_of :address, :if => lambda { self.rsvp_validation }
   validates_associated :invitees
 
   # include ActiveModel::Dirty

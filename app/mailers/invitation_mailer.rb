@@ -10,6 +10,7 @@ class InvitationMailer < ActionMailer::Base
 
 		#attachments.inline["envelope.jpg"] = File.read(Rails.root.join('app/assets/images/envelope.jpg'))
 
+    #mail(:to => "brett@cave.za.net", :subject => "test 1")
 		mail(:to => invitation.email, :subject => "You're invited to #{ENV['WEDDING_TITLE']}!")
 	end
 
