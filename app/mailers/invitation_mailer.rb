@@ -1,17 +1,17 @@
 class InvitationMailer < ActionMailer::Base
-	include SendGrid
-	sendgrid_enable :opentrack
+	#include SendGrid
+	#sendgrid_enable :opentrack
 	default :from => "#{ENV['COUPLE_NAME']} <#{ENV['RSVP_EMAIL_FROM_ADDRESS']}>"
 
 	def invitation_email(invitation)
 		@invitation = invitation
-		sendgrid_category "invitations"
-		sendgrid_unique_args :invitation_id => invitation.id
+		#sendgrid_category "invitations"
+		#sendgrid_unique_args :invitation_id => invitation.id
 
 		#attachments.inline["envelope.jpg"] = File.read(Rails.root.join('app/assets/images/envelope.jpg'))
 
     #mail(:to => "brett@cave.za.net", :subject => "test 1")
-		mail(:to => invitation.email, :subject => "You're invited to #{ENV['WEDDING_TITLE']}!")
+		mail(:to => invitation.email, :subject => "You're invited to #{ENV['WEDDING_TITLE']}")
 	end
 
 	def reminder_email(invitation)
