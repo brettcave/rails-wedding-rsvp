@@ -5,12 +5,11 @@ class InvitationMailer < ActionMailer::Base
 
 	def invitation_email(invitation)
 		@invitation = invitation
-		sendgrid_category "invitations"
-		sendgrid_unique_args :invitation_id => invitation.id
+		#sendgrid_category "invitations"
+		#sendgrid_unique_args :invitation_id => invitation.id
 
 		attachments.inline["envelope.jpg"] = File.read(Rails.root.join('app/assets/images/envelope.jpg'))
 
-    #mail(:to => "brett@cave.za.net", :subject => "test 1")
 		mail(:to => invitation.email, :subject => "You're invited to #{ENV['WEDDING_TITLE']}")
 	end
 
