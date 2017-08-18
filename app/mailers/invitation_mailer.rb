@@ -15,8 +15,8 @@ class InvitationMailer < ActionMailer::Base
 
 	def reminder_email(invitation)
 		@invitation = invitation
-		sendgrid_category "reminders"
-		sendgrid_unique_args :invitation_id => invitation.id
+		#sendgrid_category "reminders"
+		#sendgrid_unique_args :invitation_id => invitation.id
 
 		mail(:to => invitation.email, :subject => "Reminder: Please RSVP for #{ENV['COUPLE_NAME']}'s Wedding")
 	end
