@@ -23,8 +23,8 @@ class InvitationMailer < ActionMailer::Base
 
 	def custom_email(invitation, subject, body)
 		@invitation = invitation
-		sendgrid_category "miscellaneous"
-		sendgrid_unique_args :invitation_id => invitation.id
+		#sendgrid_category "miscellaneous"
+		#sendgrid_unique_args :invitation_id => invitation.id
 		@body = body
 
 		mail(:to => invitation.email, :subject => subject)
@@ -32,16 +32,16 @@ class InvitationMailer < ActionMailer::Base
 
 	def rsvp_notification(invitation)
 		@invitation = invitation
-		sendgrid_category "notifications"
-		sendgrid_unique_args :invitation_id => invitation.id
+		#sendgrid_category "notifications"
+		#sendgrid_unique_args :invitation_id => invitation.id
 
 		mail(:from => "#{@invitation.name} <#{ENV['RSVP_EMAIL_FROM_ADDRESS']}>", :to => ENV['RSVP_NOTIFICATION_ADDRESS'], :subject => "RSVP response from " << @invitation.name)
 	end
 
 	def rsvp_confirmation(invitation)
 		@invitation = invitation
-		sendgrid_category "confirmations"
-		sendgrid_unique_args :invitation_id => invitation.id
+		#sendgrid_category "confirmations"
+		#sendgrid_unique_args :invitation_id => invitation.id
 
 		mail(:to => @invitation.email, :subject => "Your RSVP has been received, thanks!")
 	end
